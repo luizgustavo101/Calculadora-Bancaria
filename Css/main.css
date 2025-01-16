@@ -1,0 +1,147 @@
+:root {
+  --cor-primaria: #e4e4e4;
+  --cor-secundaria: #008db8;
+  --cor-terciaria: #008db886;
+  --cor-quartenaria: #02b302;
+  --cor-quinternaria: #94cc94;
+  --cor-fonte-primaria: #000000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cor-secundaria);
+  scrollbar-width: none;
+}
+
+.main {
+  background-color: var(--cor-primaria);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 50%;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.input {
+  all: unset;
+  border-bottom: 1px solid black;
+  font-family: sans-serif;
+  padding: 2px 0px;
+  width: 100%;
+}
+
+.h1 {
+  flex-basis: 10%;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  color: var(--cor-fonte-primaria);
+}
+
+.button {
+  border-radius: 5%;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.35s;
+  all: unset;
+  background-color: var(--cor-secundaria);
+  padding: 5px;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: var(--cor-fonte-primaria);
+  background-color: var(--cor-terciaria);
+}
+
+.button:active {
+  transform: scale(0.8);
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.resultado {
+  text-align: center;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+}
+
+.element{
+    flex-basis: 100%;
+    flex-shrink: 1;
+    flex-grow: 0;
+    display: inline;
+}
+
+.navegar{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.calcular {
+  all: unset;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 5px;
+
+  color: var(--cor-fonte-primaria);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.35s;
+  background-color: var(--cor-quartenaria);
+  color: var(--cor-primaria);
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.calcular:hover {
+  color: var(--cor-fonte-primaria);
+  background-color: var(--cor-quinternaria);
+}
+
+.voltar {
+  all: unset;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.35s;
+  background-color: var(--cor-secundaria);
+  padding: 5px;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  color: var(--cor-fonte-primaria);
+  background-color: var(--cor-terciaria);
+}
+
+.voltar:active {
+  transform: scale(0.8);
+}
