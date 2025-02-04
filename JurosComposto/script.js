@@ -1,7 +1,7 @@
 let c;
 let i;
 let t;
-let j;
+let m;
 let resultado;
 
 function pegarValores() {
@@ -9,56 +9,55 @@ function pegarValores() {
    c = Number(document.querySelector("#capital").value);
    i = Number(document.querySelector("#taxa").value/100);
    t = Number(document.querySelector("#tempo").value);
-   j = Number(document.querySelector("#juros").value);
+   m = Number(document.querySelector("#montante").value);
 }
 
 const capital = ()=>{
-  c = j/(i*t)
+  c = m/Math.pow(1+i,t);
   c = c.toFixed(2);
   c = c.replace(".",',');
   resultado.innerHTML = `<p>Capital: R$ ${c}</p>`;
 }
 
 const taxa = ()=>{
-  i = (j/(c*t))*100;
+  i = (Math.pow(m/c, 1 / t) - 1)*100 ;
   i = i.toFixed(2);
-  i = i.replace(".",',');
+  i = i.replace(".",',')
   resultado.innerHTML = `<p>Taxa: ${i}%</p>`;
 }
 
 const tempo = ()=>{
-  t = j/(i*c)
+  t = Math.log(m/c) / Math.log(1 + i)
   t = t.toFixed(2);
   t = t.replace(".",',');
   resultado.innerHTML = `<p>Tempo ${t}</p>`;
 }
 
-function juros(){
-  j = c*i*t;
-  j = j.toFixed(2);
-  j = j.replace(".",',');
-  resultado.innerHTML = `<p>Juros: R$ ${j}</p>`;
+function montante(){
+  m = c*Math.pow(1+i,t);
+  m = m.toFixed(2);
+  m = m.replace(".",',');
+  resultado.innerHTML = `<p>Montante: R$ ${m}</p>`;
 }
 
 
 function calcular(){
   pegarValores();
-  if(j == 0){
-    juros();
-  }else if(c == 0){
+  if(c == 0){
     capital();
   }else if(i == 0){
     taxa()
   }else if(t == 0){
     tempo();
+  }else if(m == 0){
+    montante();
   }
 }
 
-function limpar() {
-  pegarValores();
-  resultado.innerHTML = 'Resultado';
-  document.querySelector("#capital").value = "";
-  document.querySelector("#taxa").value = "";
-  document.querySelector("#tempo").value = "";
-  document.querySelector("#juros").value ="";
-}
+  function limpar() {
+    resultado.innerHTML = 'Resultado';
+    document.querySelector("#capital").value = "";
+    document.querySelector("#taxa").value = "";
+    document.querySelector("#tempo").value = "";
+    document.querySelector("#montante").value = "";
+  }
