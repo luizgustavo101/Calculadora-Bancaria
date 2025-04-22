@@ -29,6 +29,10 @@
 }
 
 .main {
+  opacity: 0;
+  animation: efect;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
   display: flex;
   flex-direction: column;
   height: auto;
@@ -38,6 +42,12 @@
   justify-content: center;
   background-color: var(--cor-primaria);
   border-radius: 5px;
+}
+
+@keyframes efect {
+  100%{
+    opacity: 1;
+  }
 }
 
 .main > div{
